@@ -1,5 +1,7 @@
 import { CurrentUserLoader } from "./CurrentUserLoader";
+import { ResourceLoader } from "./ResourceLoader";
 import { UserInfo } from "./UserInfo";
+import { ProductInfo } from "./ProductInfo";
 import { UserLoader } from "./UserLoader";
 
 function App() {
@@ -11,12 +13,18 @@ function App() {
       <UserLoader userId={"234"}>
         <UserInfo />
       </UserLoader>
-      <UserLoader userId={"123"}>
+      <ResourceLoader
+        resourceName={"user"}
+        resourceUrl={"http://localhost:8080/users/345"}
+      >
         <UserInfo />
-      </UserLoader>
-      <UserLoader userId={"345"}>
-        <UserInfo />
-      </UserLoader>
+      </ResourceLoader>
+      <ResourceLoader
+        resourceName={"product"}
+        resourceUrl={"http://localhost:8080/products/1234"}
+      >
+        <ProductInfo />
+      </ResourceLoader>
     </>
   );
 }
