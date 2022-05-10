@@ -1,6 +1,6 @@
 export const ProductInfo = ({ product }) => {
   const { name, price, description, rating } = product || {};
-
+  console.log(name, price, description, rating);
   return product ? (
     <>
       <h3>{name}</h3>
